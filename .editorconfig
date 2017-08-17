@@ -11,7 +11,7 @@ trim_trailing_whitespace = true
 charset = utf-8
 indent_style = space
 
-[*.{js,html}]
+[*.{js,html,css}]
 indent_size = 2
 
 [*.py]
