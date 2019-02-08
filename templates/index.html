@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+  {% from 'components/common/head.html' import head %}
+  {{head('Главная страница')}}
+  <body>
+    {% from 'components/common/header.html' import header %}
+    {{ header(showHeader=False) }}
+    <main>
+      <div class="container">
+        <div class="row">
+          <div class="col-12 participants">
+            <p class="participants__string">
+              Участники в Новосибирске:
+              <a href="#" class="participants__link h5">105 оптовых компаний</a>
+              <a href="#" class="participants__link h5">25 производителей</a>
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 requests-form">
+            <p class="requests-form__title h2 text-center">
+              ВАМ ПОЗВОНЯТ ЛУЧШИЕ ПОСТАВЩИКИ НОВОСИБИРСКА
+            </p>
+            {% include 'components/main/i-am-looking-for-form.html' %}
+          </div>
+        </div>
+        <div class="row">
+          {% from 'components/common/requests.html' import request_line, requests_header %}
+          <div class="col-12 requests-list">
+            {{ requests_header('Свежие заявки') }}
+
+            <hr />
+            {% for n in range(3) %}
+              {{ request_line(
+                'вчера, в 21:30',
+                '60 шт. ПК от 72-15 до ПК 21-15, Криводановка, с доставкой.',
+                'Алексей',
+                '79998765430',
+                12
+              ) }}
+              <hr />
+            {% endfor %}
+
+            <p class="text-center requests-list__more-button">
+              <a href="requests.html" class="btn btn-outline-dark btn-circle"
+                >Посмотреть все заявки</a
+              >
+            </p>
+          </div>
+        </div>
+        {% include 'components/main/reviews.html' %}
+      </div>
+    </main>
+
+    {% include 'components/common/footer.html' %}
+
+    {% include 'components/common/footer-scripts.html' %}
+  </body>
+</html>

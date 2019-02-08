@@ -1,6 +1,23 @@
 # Suppliers in Novosibirsk
 
-[TODO. There will be project description]
+### For development:
+
+```
+staticjinja watch --srcpath=templates --outpath=public
+```
+
+Using 
+```
+livereload public/
+```
+also might be usefull
+
+### To build:
+
+```
+staticjinja build --srcpath=templates --outpath=public
+```
+
 
 # Project Goals
 

@@ -1,0 +1,59 @@
+{% macro request_line(time, text, name, phone, views_number ) -%}
+<div class="requests-article">
+  <div class="col-12">
+    <header
+      class="row justify-content-between requests-article__header text-secondary"
+    >
+      <span class="requests-article__time">{{ time }}</span>
+      <span class="requests-article__favorite"
+        ><span class="oi oi-star"></span> в закладки</span
+      >
+    </header>
+  </div>
+
+  <p class="requests-article__text">
+    {{ text }}
+  </p>
+  <p class="requests-article__author">
+    {{ name }}
+  </p>
+  <button
+    class="requests-article__number-button btn btn-secondary btn-circle"
+    data-id="0"
+  >
+    Показать телефон
+  </button>
+  <span id="request-0-tel" class="requests-article__tel-number" hidden>
+    <a href="tel:+{{phone}}">+{{ "(%s) %s-%s".format(phone[1:4], phone[6:9], phone[10:14] ) }}</a>
+  </span>
+  <small
+    id="request-0-views-cnt"
+    class="requests-article__views-cnt"
+    data-count="12"
+    >{{ views_number }} просмотров</small
+  >
+</div>
+{%- endmacro %}
+
+{% macro requests_header(title='Заявки') -%}
+            <div class="requests-list__title">
+              <p class="h2 text-center">{{ title }}</p>
+            </div>
+            <div class="col-12">
+              <div
+                class="row justify-content-between requests-list__filter text-secondary"
+              >
+                <div class="">
+                  <span>раздел: <a href="javascript:void(0)">Все ▼</a></span>
+                </div>
+                <div class="">
+                  <span
+                    >регион:
+                    <a href="javascript:void(0)"
+                      >Новосибирск и область ▼</a
+                    ></span
+                  >
+                </div>
+              </div>
+            </div>
+{%- endmacro %}

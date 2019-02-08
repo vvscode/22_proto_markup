@@ -1,0 +1,33 @@
+{% macro header() -%}
+<header>
+  <div class="container-fluid top-header">
+    <div class="col-12">
+      <div class="row justify-content-between">
+        <span class="geoip">
+          <span class="geoip__label">Регион:</span>
+          <a href="javascript:void(0)" class="geoip__button">
+            <span class="geoip__checked-item-text">Новосибирск и область</span>
+            <span class="geoip__button-triangle"> ▼</span>
+          </a>
+        </span>
+        <span class="profile-line">
+          <a href="#" class="profile-line__name">Леонид Фёдорович</a>
+          <a href="#" class="profile-line__exit">выход</a>
+        </span>
+      </div>
+    </div>
+  </div>
+  {% if kwargs['showHeader'] %}
+    <div class="container bottom-header">
+      <div class="row">
+        <div class="col-12 logo">
+          <a href="index.html" class="logo__link">
+            <img class="logo__img" src="assets/images/logo__56x56.png" alt="logo" />
+            <span class="logo__text">kupimsami.ru</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+</header>
+{%- endmacro %}

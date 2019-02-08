@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+    {% from 'components/common/head.html' import head %}
+    {{head('Заявки')}}
+  <body>
+    {% from 'components/common/header.html' import header %}
+    {{ header(showHeader=True) }}
+
+    <main>
+      <div class="container">
+        <div class="row">
+          {% from 'components/common/requests.html' import request_line, requests_header %}
+          <div class="col-12 requests-list">
+            {{ requests_header('Заявки') }}
+
+
+            <hr />
+
+            {% for n in range(15) %}
+              {{ request_line(
+                'вчера, в 21:30',
+                '60 шт. ПК от 72-15 до ПК 21-15, Криводановка, с доставкой.',
+                'Алексей',
+                '79998765430',
+                12
+              ) }}
+              <hr />
+            {% endfor %}
+
+            <p class="text-center requests-list__more-button">
+              <a
+                href="javascript:void(0)"
+                class="btn btn-outline-dark btn-circle"
+                >Показать ещё</a
+              >
+            </p>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="row justify-content-center">
+            {% include 'components/common/paginator.html' %}
+          </div>
+        </div>
+      </div>
+    </main>
+
+    {% include 'components/common/footer.html' %}
+
+    {% include 'components/common/footer-scripts.html' %}
+  </body>
+</html>
