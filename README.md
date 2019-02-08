@@ -1,5 +1,7 @@
 # Suppliers in Novosibirsk
 
+* Preview is at https://vvscode.github.io/22_proto_markup/public/index.html *
+
 This repository contains template for suppliers website. It uses [jinja2](http://jinja.pocoo.org/) templates. And might be compiled with [staticjinja](https://staticjinja.readthedocs.io/).
 
 To install all the requirements use next line:
