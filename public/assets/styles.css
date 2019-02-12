@@ -119,3 +119,17 @@ body > footer {
   background-color: #ddd;
   border-top: 3px solid black;
 }
+
+.logo__text {
+  line-height: 56px;
+}
+
+.logo__text:before {
+    content: '';
+    background-image: url(images/logo__56x56.png);
+    height: 56px;
+    width: 56px;
+    display: block;
+    float: left;
+    margin-right: 5px;
+}
