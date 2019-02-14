@@ -1,4 +1,4 @@
-{% macro request_line(time, text, name, phone, views_number ) -%}
+{% macro request_line(time, text, name, phone, views_number, id ) -%}
 <div class="requests-article">
   <div class="col-12">
     <header
@@ -19,17 +19,17 @@
   </p>
   <button
     class="requests-article__number-button btn btn-secondary btn-circle"
-    data-id="0"
+    data-id="{{id}}"
   >
     Показать телефон
   </button>
-  <span id="request-0-tel" class="requests-article__tel-number" hidden>
-    <a href="tel:+{{phone}}">+{{ "(%s)&nbsp;%s-%s".format(phone[1:4], phone[6:9], phone[10:14] ) }}</a>
+  <span id="request-{{id}}-tel" class="requests-article__tel-number" hidden>
+    <a href="tel:+{{phone}}">+{{ "{}&nbsp;({})&nbsp;{}-{}".format(phone[0],phone[1:4], phone[4:7], phone[7:] ) }}</a>
   </span>
   <small
-    id="request-0-views-cnt"
+    id="request-{{id}}-views-cnt"
     class="requests-article__views-cnt"
-    data-count="12"
+    data-count="{{views_number}}"
     >{{ views_number }} просмотров</small
   >
 </div>
